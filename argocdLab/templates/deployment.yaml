@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.deployment.replicas }}
   revisionHistoryLimit: 3
   selector:
-    matchLabels:
+    MatchLabels:
       {{- include "labels" . | nindent 6 }}
     template:
       metadata:
