@@ -14,10 +14,10 @@ spec:
     metadata:
       labels:
         {{- include "labels" . | nindent 8 }}
-      spec:
-        containers:
-          - name: {{ .Values.container.name }}
-            image: {{ .Values.container.image }}
-            ports:
-              - containerPort: {{ .Values.container.port }}
+    spec:
+      containers:
+        - name: {{ .Values.container.name }}
+          image: {{ .Values.container.image }}
+          ports:
+            - containerPort: {{ .Values.container.port }}
               
