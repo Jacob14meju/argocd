@@ -10,14 +10,14 @@ spec:
   selector:
     matchLabels:
       {{- include "labels" . | nindent 6 }}
-    template:
-      metadata:
-        labels:
-          {{- include "labels" . | nindent 8 }}
-        spec:
-          containers:
-            - name: {{ .Values.container.name }}
-              image: {{ .Values.container.image }}
-              ports:
-                - containerPort: {{ .Values.container.port }}
+  template:
+    metadata:
+      labels:
+        {{- include "labels" . | nindent 8 }}
+      spec:
+        containers:
+          - name: {{ .Values.container.name }}
+            image: {{ .Values.container.image }}
+            ports:
+              - containerPort: {{ .Values.container.port }}
               
