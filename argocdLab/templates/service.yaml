@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   labels:
-    {{- inclued "labels" | nindent 4 }}
+    {{- include "labels" . | nindent 4 }}
 spec:
   selector:
-    {{- inclued "labels" | nindent 4 }}
+    {{- include "labels" . | nindent 4 }}
   type: loadbalancer
   ports:
   - protocol: TCP

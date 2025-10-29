@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: {{ .Values.deployment.name }}
   labels:
-    {{- include "labels" | nindent 4 }}
+    {{- include "labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   revisionHistoryLimit: 3
   selector:
     matchLables:
-      {{- include "labels" | nindent 6 }}
+      {{- include "labels" . | nindent 6 }}
     template:
       metadata:
         labels:
-          {{- include "labels" | nindent 8 }}
+          {{- include "labels" . | nindent 8 }}
         spec:
           containers:
             - name: {{ .Values.container.name }}
