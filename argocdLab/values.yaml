@@ -1,0 +1,7 @@
+deployment:
+  replicas: 2
+  name: argocd-deployment
+container:
+  name: argocd-container
+  image: gcr.io/google-samples/gb-frontend:v5
+  port: 80
