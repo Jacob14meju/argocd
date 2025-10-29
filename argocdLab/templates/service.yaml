@@ -9,6 +9,6 @@ spec:
     {{- include "labels" . | nindent 4 }}
   type: loadbalancer
   ports:
-  - protocol: TCP
-    port: {{ .Values.svc.port}}
-    targetPort: {{ .Values.container.port }}
+    - protocol: TCP
+      port: {{ .Values.service.port}}
+      targetPort: {{ .Values.container.port }}
